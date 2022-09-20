@@ -1,0 +1,30 @@
+{
+  "name": "distro-cdk",
+  "version": "0.1.0",
+  "bin": {
+    "distro-cdk": "bin/distro-cdk.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "tsc --build --clean",
+    "watch": "tsc -w",
+    "lint": "eslint .",
+    "cdk": "cdk",
+    "cognito-local": "cognito-local"
+  },
+  "devDependencies": {
+    "@types/node": "10.17.27",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "aws-cdk": "2.41.0",
+    "cognito-local": "^3.21.1",
+    "dotenv": "^16.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.41.0",
+    "constructs": "^10.0.0",
+    "source-map-support": "^0.5.21"
+  }
+}

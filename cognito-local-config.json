@@ -1,0 +1,24 @@
+{
+  "LambdaClient": {
+    "endpoint": "http://127.0.0.1:3001"
+  },
+  "TokenConfig": {
+    "IssuerDomain": "http://localhost:9229"
+  },
+  "TriggerFunctions": {
+    "PostConfirmation": "CognitofnSignupHandler7C3EDD45",
+    "PreTokenGeneration": "CognitofnSigninHandlerEC3F28CA"
+  },
+  "UserPoolDefaults": {
+    "UsernameAttributes": [
+      "email"
+    ]
+  },
+  "KMSConfig": {
+    "credentials": {
+      "accessKeyId": "local",
+      "secretAccessKey": "local"
+    },
+    "region": "local"
+  }
+}

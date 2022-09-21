@@ -28,7 +28,6 @@ export interface HasuraServiceProps {
   lambdasHostname: string;
   appName: string;
   gql_remote_schema: string;
-  env: any;
 }
 
 export class HasuraConstruct extends Construct {

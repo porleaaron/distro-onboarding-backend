@@ -6,6 +6,7 @@ import { Runtime } from "aws-cdk-lib/aws-lambda";
 import { PublicHostedZone } from "aws-cdk-lib/aws-route53";
 import { RetainedLambdaLayerVersion } from "./retained-lambda-layer";
 import { LambdasConstruct } from "./lambda";
+import { HasuraConstruct } from "./hasura";
 
 interface ApplicationStackProps extends StackProps {
   multiAz: boolean;
@@ -66,6 +67,15 @@ export class DistroBackendStack extends cdk.Stack {
         zoneName: hostedZoneName,
       }
     );
+
+    new HasuraConstruct(this, "Hasura", {
+      hostedZone,
+      hasuraHostname,
+      multiAz,
+      lambdasHostname,
+      appName,
+      gql_remote_schema,
+    });
 
     new LambdasConstruct(this, "Lambdas", {
       appName,

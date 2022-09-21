@@ -15,6 +15,7 @@ Available targets:
 		coginto-signup				Confirm signup user to trigger CognitofnSignupHandler
 		cognito-create-client	Create new Client for the UserPool on cognito-local
 		cognito-init-auth			User authorization to trigger CognitofnSigninHandler
+		cognito-batch			Batch Cognito Command
 endef
 
 export HELP
@@ -74,3 +75,7 @@ cognito-create-client:
 
 cognito-init-auth:
 	aws --endpoint http://localhost:9229 cognito-idp admin-initiate-auth --region local --user-pool-id $(pool_id) --client-id $(client_id) --auth-flow ADMIN_USER_PASSWORD_AUTH --auth-parameters USERNAME=$(email),PASSWORD=$(password)
+
+cognito-batch:
+	chmod +x batch-command.sh 
+	./batch-command.sh
